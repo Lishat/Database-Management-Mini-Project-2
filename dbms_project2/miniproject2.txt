@@ -1,0 +1,550 @@
+mysql> SELECT ice_hockey_action_participants.person_id, ice_hockey_action_participants.participant_role, ice_hockey_action_plays.score_attempt_type, ice_hockey_event_states.period_time_remaining FROM ice_hockey_event_states JOIN ice_hockey_action_plays ON ice_hockey_event_states.id = ice_hockey_action_plays.ice_hockey_event_state_id JOIN ice_hockey_action_participants ON ice_hockey_action_plays.id = ice_hockey_action_participants.ice_hockey_action_play_id;
++-----------+------------------+--------------------+-----------------------+
+| person_id | participant_role | score_attempt_type | period_time_remaining |
++-----------+------------------+--------------------+-----------------------+
+|      1817 | goal             | power-play         | 7:54                  |
+|      1818 | assist           | power-play         | 7:54                  |
+|      1819 | assist           | power-play         | 7:54                  |
+|      1820 | goal             | regular            | 18:12                 |
+|      1821 | assist           | regular            | 18:12                 |
+|      1822 | assist           | regular            | 18:12                 |
+|      1823 | goal             | regular            | 11:40                 |
+|      1824 | assist           | regular            | 11:40                 |
+|      1825 | goal             | regular            | 14:30                 |
+|      1826 | assist           | regular            | 14:30                 |
+|      1827 | assist           | regular            | 14:30                 |
+|      1828 | goal             | regular            | 2:41                  |
+|      1829 | assist           | regular            | 2:41                  |
+|      1830 | assist           | regular            | 2:41                  |
+|      1862 | goal             | power-play         | 8:47                  |
+|      1863 | assist           | power-play         | 8:47                  |
+|      1864 | assist           | power-play         | 8:47                  |
+|      1865 | goal             | regular            | 15:02                 |
+|      1866 | assist           | regular            | 15:02                 |
+|      1867 | assist           | regular            | 15:02                 |
+|      1868 | goal             | regular            | 11:06                 |
+|      1869 | assist           | regular            | 11:06                 |
+|      1870 | assist           | regular            | 11:06                 |
+|      1871 | goal             | regular            | 17:31                 |
+|      1872 | assist           | regular            | 17:31                 |
+|      1873 | assist           | regular            | 17:31                 |
+|      1874 | goal             | power-play         | 6:41                  |
+|      1875 | assist           | power-play         | 6:41                  |
+|      1876 | assist           | power-play         | 6:41                  |
+|      1877 | goal             | power-play         | 1:52                  |
+|      1878 | assist           | power-play         | 1:52                  |
+|      1879 | assist           | power-play         | 1:52                  |
+|      1880 | goal             | empty-net          | 0:25                  |
+|      1924 | goal             | power-play         | 17:39                 |
+|      1925 | assist           | power-play         | 17:39                 |
+|      1926 | assist           | power-play         | 17:39                 |
+|      1927 | goal             | regular            | 14:32                 |
+|      1928 | assist           | regular            | 14:32                 |
+|      1929 | goal             | regular            | 9:22                  |
+|      1930 | assist           | regular            | 9:22                  |
+|      1931 | assist           | regular            | 9:22                  |
+|      1932 | goal             | regular            | 6:23                  |
+|      1933 | assist           | regular            | 6:23                  |
+|      2197 | assist           | regular            | 9:40                  |
+|      2196 | assist           | regular            | 9:40                  |
+|      2195 | goal             | regular            | 9:40                  |
+|      2199 | assist           | short-handed       | 8:06                  |
+|      2198 | goal             | short-handed       | 8:06                  |
+|      2202 | assist           | power-play         | 4:06                  |
+|      2201 | assist           | power-play         | 4:06                  |
+|      2200 | goal             | power-play         | 4:06                  |
+|      2205 | assist           | regular            | 18:44                 |
+|      2204 | assist           | regular            | 18:44                 |
+|      2203 | goal             | regular            | 18:44                 |
+|      2208 | assist           | power-play         | 14:54                 |
+|      2207 | assist           | power-play         | 14:54                 |
+|      2206 | goal             | power-play         | 14:54                 |
+|      2211 | assist           | power-play         | 6:35                  |
+|      2210 | assist           | power-play         | 6:35                  |
+|      2209 | goal             | power-play         | 6:35                  |
+|      2214 | assist           | regular            | 0:10                  |
+|      2213 | assist           | regular            | 0:10                  |
+|      2212 | goal             | regular            | 0:10                  |
+|      1972 | goal             | power-play         | 18:42                 |
+|      1973 | assist           | power-play         | 18:42                 |
+|      1974 | assist           | power-play         | 18:42                 |
+|      1975 | goal             | regular            | 3:14                  |
+|      1976 | assist           | regular            | 3:14                  |
+|      1977 | assist           | regular            | 3:14                  |
+|      1978 | goal             | power-play         | 17:27                 |
+|      1979 | assist           | power-play         | 17:27                 |
+|      1980 | assist           | power-play         | 17:27                 |
+|      1981 | goal             | regular            | 13:56                 |
+|      1982 | assist           | regular            | 13:56                 |
+|      1983 | assist           | regular            | 13:56                 |
+|      1984 | goal             | power-play         | 1:34                  |
+|      1985 | assist           | power-play         | 1:34                  |
+|      2169 | assist           | regular            | 15:25                 |
+|      2168 | assist           | regular            | 15:25                 |
+|      2167 | goal             | regular            | 15:25                 |
+|      2172 | assist           | regular            | 4:16                  |
+|      2171 | assist           | regular            | 4:16                  |
+|      2170 | goal             | regular            | 4:16                  |
+|      2174 | assist           | short-handed       | 12:19                 |
+|      2173 | goal             | short-handed       | 12:19                 |
+|      2177 | assist           | regular            | 5:20                  |
+|      2176 | assist           | regular            | 5:20                  |
+|      2175 | goal             | regular            | 5:20                  |
+|      2179 | assist           | short-handed       | 2:21                  |
+|      2178 | goal             | short-handed       | 2:21                  |
+|      2137 | goal             | regular            | 13:59                 |
+|      2134 | assist           | regular            | 13:59                 |
+|      2138 | assist           | regular            | 13:59                 |
+|      2139 | goal             | regular            | 13:26                 |
+|      2140 | assist           | regular            | 13:26                 |
+|      2141 | assist           | regular            | 13:26                 |
+|      3548 | goal             | regular            | 4:19                  |
+|      3549 | assist           | regular            | 4:19                  |
+|      3550 | assist           | regular            | 4:19                  |
+|      3551 | goal             | regular            | 1:51                  |
+|      3552 | assist           | regular            | 1:51                  |
+|      3553 | assist           | regular            | 1:51                  |
+|      3554 | goal             | regular            | 7:24                  |
+|      3555 | assist           | regular            | 7:24                  |
+|      3556 | assist           | regular            | 7:24                  |
+|      3746 | goal             | regular            | 18:37                 |
+|      3747 | assist           | regular            | 18:37                 |
+|      3748 | assist           | regular            | 18:37                 |
+|      3749 | goal             | power-play         | 16:39                 |
+|      3750 | assist           | power-play         | 16:39                 |
+|      3751 | assist           | power-play         | 16:39                 |
+|      3752 | goal             | regular            | 10:17                 |
+|      3753 | assist           | regular            | 10:17                 |
+|      3754 | assist           | regular            | 10:17                 |
+|      3755 | goal             | regular            | 1:39                  |
+|      3756 | assist           | regular            | 1:39                  |
+|      3757 | assist           | regular            | 1:39                  |
+|      3758 | goal             | regular            | 10:37                 |
+|      3759 | assist           | regular            | 10:37                 |
+|      3760 | goal             | regular            | 15:40                 |
+|      3761 | goal             | power-play         | 0:47                  |
+|      3776 | goal             | regular            | 15:47                 |
+|      3779 | assist           | regular            | 15:47                 |
+|      3780 | assist           | regular            | 15:47                 |
+|      3774 | goal             | short-handed       | 15:59                 |
+|      3781 | assist           | short-handed       | 15:59                 |
+|      3782 | assist           | short-handed       | 15:59                 |
+|      3925 | goal             | regular            | 7:31                  |
+|      3926 | assist           | regular            | 7:31                  |
+|      3927 | assist           | regular            | 7:31                  |
+|      3928 | goal             | regular            | 11:57                 |
+|      3929 | assist           | regular            | 11:57                 |
+|      3930 | assist           | regular            | 11:57                 |
+|      3937 | assist           | power-play         | 4:08                  |
+|      3936 | goal             | power-play         | 4:08                  |
+|      3933 | goal             | power-play         | 18:27                 |
+|      3934 | assist           | power-play         | 18:27                 |
+|      3935 | assist           | power-play         | 18:27                 |
++-----------+------------------+--------------------+-----------------------+
+138 rows in set (0.0012 sec)
+
+mysql>SELECT person_id, ice_hockey_offensive_stats.id, stat_repository_type, goals_game_winning FROM stats INNER JOIN ice_hockey_offensive_stats ON stat_repository_id = ice_hockey_offensive_stats.id INNER JOIN ice_hockey_action_participants ON person_id = stat_holder_id WHERE stat_repository_type = "ice_hockey_offensive_stats" AND stats.stat_holder_type = "persons" 
++-----------+------+----------------------------+--------------------+
+| person_id | id   | stat_repository_type       | goals_game_winning |
++-----------+------+----------------------------+--------------------+
+|      1817 |    4 | ice_hockey_offensive_stats | 0                  |
+|      1818 |    7 | ice_hockey_offensive_stats | 0                  |
+|      1819 |    8 | ice_hockey_offensive_stats | 0                  |
+|      1821 |    3 | ice_hockey_offensive_stats | 0                  |
+|      1822 |    5 | ice_hockey_offensive_stats | 0                  |
+|      1823 |   28 | ice_hockey_offensive_stats | 0                  |
+|      1823 |   48 | ice_hockey_offensive_stats | 0                  |
+|      1824 |   25 | ice_hockey_offensive_stats | 0                  |
+|      1824 |   50 | ice_hockey_offensive_stats | 0                  |
+|      1825 |   22 | ice_hockey_offensive_stats | 1                  |
+|      1825 |   45 | ice_hockey_offensive_stats | 1                  |
+|      1826 |   24 | ice_hockey_offensive_stats | 0                  |
+|      1826 |   47 | ice_hockey_offensive_stats | 0                  |
+|      1827 |   26 | ice_hockey_offensive_stats | 0                  |
+|      1827 |   55 | ice_hockey_offensive_stats | 0                  |
+|      1829 |   27 | ice_hockey_offensive_stats | 0                  |
+|      1829 |   49 | ice_hockey_offensive_stats | 0                  |
+|      1830 |   23 | ice_hockey_offensive_stats | 0                  |
+|      1830 |   53 | ice_hockey_offensive_stats | 0                  |
+|      1863 |   70 | ice_hockey_offensive_stats | 0                  |
+|      1863 |  108 | ice_hockey_offensive_stats | 0                  |
+|      1864 |   72 | ice_hockey_offensive_stats | 0                  |
+|      1864 |  109 | ice_hockey_offensive_stats | 0                  |
+|      1865 |   69 | ice_hockey_offensive_stats | 0                  |
+|      1865 |  107 | ice_hockey_offensive_stats | 0                  |
+|      1868 |   73 | ice_hockey_offensive_stats | 1                  |
+|      1868 |  120 | ice_hockey_offensive_stats | 1                  |
+|      1871 |   89 | ice_hockey_offensive_stats | 0                  |
+|      1871 |  136 | ice_hockey_offensive_stats | 0                  |
+|      1872 |   88 | ice_hockey_offensive_stats | 0                  |
+|      1872 |  142 | ice_hockey_offensive_stats | 0                  |
+|      1873 |   90 | ice_hockey_offensive_stats | 0                  |
+|      1873 |  140 | ice_hockey_offensive_stats | 0                  |
+|      1879 |   91 | ice_hockey_offensive_stats | 0                  |
+|      1879 |  135 | ice_hockey_offensive_stats | 0                  |
+|      1975 |  313 | ice_hockey_offensive_stats | 0                  |
+|      1975 |  701 | ice_hockey_offensive_stats | 0                  |
+|      1976 |  314 | ice_hockey_offensive_stats | 0                  |
+|      1976 |  696 | ice_hockey_offensive_stats | 0                  |
+|      1977 |  312 | ice_hockey_offensive_stats | 0                  |
+|      1977 |  697 | ice_hockey_offensive_stats | 0                  |
+|      1978 |  316 | ice_hockey_offensive_stats | 0                  |
+|      1978 |  690 | ice_hockey_offensive_stats | 0                  |
+|      1979 |  315 | ice_hockey_offensive_stats | 0                  |
+|      1979 |  691 | ice_hockey_offensive_stats | 1                  |
+|      2137 |  530 | ice_hockey_offensive_stats | 0                  |
+|      2134 |  531 | ice_hockey_offensive_stats | 0                  |
+|      2138 |  529 | ice_hockey_offensive_stats | 0                  |
+|      2139 |  510 | ice_hockey_offensive_stats | 0                  |
+|      2140 |  512 | ice_hockey_offensive_stats | 0                  |
+|      2141 |  511 | ice_hockey_offensive_stats | 0                  |
+|      3548 |  823 | ice_hockey_offensive_stats | 1                  |
+|      3548 |  849 | ice_hockey_offensive_stats | 1                  |
+|      3549 |  824 | ice_hockey_offensive_stats | 0                  |
+|      3549 |  858 | ice_hockey_offensive_stats | 0                  |
+|      3550 |  829 | ice_hockey_offensive_stats | 0                  |
+|      3550 |  847 | ice_hockey_offensive_stats | 1                  |
+|      3551 |  828 | ice_hockey_offensive_stats | 0                  |
+|      3551 |  842 | ice_hockey_offensive_stats | 2                  |
+|      3552 |  826 | ice_hockey_offensive_stats | 0                  |
+|      3552 |  844 | ice_hockey_offensive_stats | 0                  |
+|      3554 |  827 | ice_hockey_offensive_stats | 0                  |
+|      3554 |  845 | ice_hockey_offensive_stats | 0                  |
+|      3556 |  825 | ice_hockey_offensive_stats | 0                  |
+|      3556 |  857 | ice_hockey_offensive_stats | 0                  |
+|      3746 |  895 | ice_hockey_offensive_stats | 0                  |
+|      3746 |  931 | ice_hockey_offensive_stats | 1                  |
+|      3747 |  893 | ice_hockey_offensive_stats | 0                  |
+|      3747 |  934 | ice_hockey_offensive_stats | 0                  |
+|      3748 |  896 | ice_hockey_offensive_stats | 0                  |
+|      3748 |  935 | ice_hockey_offensive_stats | 0                  |
+|      3750 |  900 | ice_hockey_offensive_stats | 0                  |
+|      3750 |  941 | ice_hockey_offensive_stats | 0                  |
+|      3751 |  899 | ice_hockey_offensive_stats | 0                  |
+|      3751 |  939 | ice_hockey_offensive_stats | 0                  |
+|      3755 |  894 | ice_hockey_offensive_stats | 1                  |
+|      3755 |  933 | ice_hockey_offensive_stats | 1                  |
+|      3756 |  897 | ice_hockey_offensive_stats | 0                  |
+|      3756 |  936 | ice_hockey_offensive_stats | 1                  |
+|      3757 |  892 | ice_hockey_offensive_stats | 0                  |
+|      3757 |  932 | ice_hockey_offensive_stats | 2                  |
+|      3760 |  898 | ice_hockey_offensive_stats | 0                  |
+|      3760 |  940 | ice_hockey_offensive_stats | 0                  |
+|      3776 | 1006 | ice_hockey_offensive_stats | 0                  |
+|      3776 | 1052 | ice_hockey_offensive_stats | 1                  |
+|      3780 | 1007 | ice_hockey_offensive_stats | 0                  |
+|      3780 | 1050 | ice_hockey_offensive_stats | 2                  |
+|      3774 |  987 | ice_hockey_offensive_stats | 0                  |
+|      3774 | 1029 | ice_hockey_offensive_stats | 1                  |
+|      3781 |  988 | ice_hockey_offensive_stats | 0                  |
+|      3781 | 1032 | ice_hockey_offensive_stats | 0                  |
+|      3782 |  989 | ice_hockey_offensive_stats | 0                  |
+|      3782 | 1038 | ice_hockey_offensive_stats | 0                  |
++-----------+------+----------------------------+--------------------+
+93 rows in set (0.0119 sec)
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_action_plays` DROP INDEX `id`, ADD INDEX `id` (`id`) USING HASH;
+Query OK, 51 rows affected (0.07 sec)
+Records: 51  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_action_participants` DROP INDEX `id`, ADD INDEX `id` (`id`) USING HASH;
+Query OK, 138 rows affected (0.09 sec)
+Records: 138  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_defensive_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+Query OK, 46 rows affected (0.05 sec)
+Records: 46  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_event_states` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+Query OK, 51 rows affected (0.10 sec)
+Records: 51  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_event_states` DROP INDEX `FK_ice_hoc_eve_sta_eve_id__eve_id`, ADD INDEX `FK_ice_hoc_eve_sta_eve_id__eve_id` (`event_id`) USING HASH;
+Query OK, 51 rows affected (0.08 sec)
+Records: 51  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_offensive_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+Query OK, 839 rows affected (0.08 sec)
+Records: 839  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`ice_hockey_player_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+Query OK, 817 rows affected (0.09 sec)
+Records: 817  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+Query OK, 9398 rows affected (0.16 sec)
+Records: 9398  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_1`, ADD INDEX `IDX_stats_1` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected (0.13 sec)
+Records: 9398  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_2`, ADD INDEX `IDX_stats_2` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.17 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_3`, ADD INDEX `IDX_stats_3` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.18 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_4`, ADD INDEX `IDX_stats_4` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.22 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_5`, ADD INDEX `IDX_stats_5` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.22 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_6`, ADD INDEX `IDX_stats_6` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.22 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> ALTER TABLE `MINI_PROJECT2`.`stats` DROP INDEX `IDX_stats_7`, ADD INDEX `IDX_stats_7` (`stat_repository_type`) USING HASH;
+Query OK, 9398 rows affected, 1 warning (0.16 sec)
+Records: 9398  Duplicates: 0  Warnings: 1
+
+mysql> SELECT ice_hockey_action_participants.person_id, ice_hockey_action_participants.participant_role, ice_hockey_action_plays.score_attempt_type, ice_hockey_event_states.period_time_remaining FROM ice_hockey_event_states JOIN ice_hockey_action_plays ON ice_hockey_event_states.id = ice_hockey_action_plays.ice_hockey_event_state_id JOIN ice_hockey_action_participants ON ice_hockey_action_plays.id = ice_hockey_action_participants.ice_hockey_action_play_id;
++-----------+------------------+--------------------+-----------------------+
+| person_id | participant_role | score_attempt_type | period_time_remaining |
++-----------+------------------+--------------------+-----------------------+
+|      1817 | goal             | power-play         | 7:54                  |
+|      1818 | assist           | power-play         | 7:54                  |
+|      1819 | assist           | power-play         | 7:54                  |
+|      1820 | goal             | regular            | 18:12                 |
+|      1821 | assist           | regular            | 18:12                 |
+|      1822 | assist           | regular            | 18:12                 |
+|      1823 | goal             | regular            | 11:40                 |
+|      1824 | assist           | regular            | 11:40                 |
+|      1825 | goal             | regular            | 14:30                 |
+|      1826 | assist           | regular            | 14:30                 |
+|      1827 | assist           | regular            | 14:30                 |
+|      1828 | goal             | regular            | 2:41                  |
+|      1829 | assist           | regular            | 2:41                  |
+|      1830 | assist           | regular            | 2:41                  |
+|      1862 | goal             | power-play         | 8:47                  |
+|      1863 | assist           | power-play         | 8:47                  |
+|      1864 | assist           | power-play         | 8:47                  |
+|      1865 | goal             | regular            | 15:02                 |
+|      1866 | assist           | regular            | 15:02                 |
+|      1867 | assist           | regular            | 15:02                 |
+|      1868 | goal             | regular            | 11:06                 |
+|      1869 | assist           | regular            | 11:06                 |
+|      1870 | assist           | regular            | 11:06                 |
+|      1871 | goal             | regular            | 17:31                 |
+|      1872 | assist           | regular            | 17:31                 |
+|      1873 | assist           | regular            | 17:31                 |
+|      1874 | goal             | power-play         | 6:41                  |
+|      1875 | assist           | power-play         | 6:41                  |
+|      1876 | assist           | power-play         | 6:41                  |
+|      1877 | goal             | power-play         | 1:52                  |
+|      1878 | assist           | power-play         | 1:52                  |
+|      1879 | assist           | power-play         | 1:52                  |
+|      1880 | goal             | empty-net          | 0:25                  |
+|      1924 | goal             | power-play         | 17:39                 |
+|      1925 | assist           | power-play         | 17:39                 |
+|      1926 | assist           | power-play         | 17:39                 |
+|      1927 | goal             | regular            | 14:32                 |
+|      1928 | assist           | regular            | 14:32                 |
+|      1929 | goal             | regular            | 9:22                  |
+|      1930 | assist           | regular            | 9:22                  |
+|      1931 | assist           | regular            | 9:22                  |
+|      1932 | goal             | regular            | 6:23                  |
+|      1933 | assist           | regular            | 6:23                  |
+|      2197 | assist           | regular            | 9:40                  |
+|      2196 | assist           | regular            | 9:40                  |
+|      2195 | goal             | regular            | 9:40                  |
+|      2199 | assist           | short-handed       | 8:06                  |
+|      2198 | goal             | short-handed       | 8:06                  |
+|      2202 | assist           | power-play         | 4:06                  |
+|      2201 | assist           | power-play         | 4:06                  |
+|      2200 | goal             | power-play         | 4:06                  |
+|      2205 | assist           | regular            | 18:44                 |
+|      2204 | assist           | regular            | 18:44                 |
+|      2203 | goal             | regular            | 18:44                 |
+|      2208 | assist           | power-play         | 14:54                 |
+|      2207 | assist           | power-play         | 14:54                 |
+|      2206 | goal             | power-play         | 14:54                 |
+|      2211 | assist           | power-play         | 6:35                  |
+|      2210 | assist           | power-play         | 6:35                  |
+|      2209 | goal             | power-play         | 6:35                  |
+|      2214 | assist           | regular            | 0:10                  |
+|      2213 | assist           | regular            | 0:10                  |
+|      2212 | goal             | regular            | 0:10                  |
+|      1972 | goal             | power-play         | 18:42                 |
+|      1973 | assist           | power-play         | 18:42                 |
+|      1974 | assist           | power-play         | 18:42                 |
+|      1975 | goal             | regular            | 3:14                  |
+|      1976 | assist           | regular            | 3:14                  |
+|      1977 | assist           | regular            | 3:14                  |
+|      1978 | goal             | power-play         | 17:27                 |
+|      1979 | assist           | power-play         | 17:27                 |
+|      1980 | assist           | power-play         | 17:27                 |
+|      1981 | goal             | regular            | 13:56                 |
+|      1982 | assist           | regular            | 13:56                 |
+|      1983 | assist           | regular            | 13:56                 |
+|      1984 | goal             | power-play         | 1:34                  |
+|      1985 | assist           | power-play         | 1:34                  |
+|      2169 | assist           | regular            | 15:25                 |
+|      2168 | assist           | regular            | 15:25                 |
+|      2167 | goal             | regular            | 15:25                 |
+|      2172 | assist           | regular            | 4:16                  |
+|      2171 | assist           | regular            | 4:16                  |
+|      2170 | goal             | regular            | 4:16                  |
+|      2174 | assist           | short-handed       | 12:19                 |
+|      2173 | goal             | short-handed       | 12:19                 |
+|      2177 | assist           | regular            | 5:20                  |
+|      2176 | assist           | regular            | 5:20                  |
+|      2175 | goal             | regular            | 5:20                  |
+|      2179 | assist           | short-handed       | 2:21                  |
+|      2178 | goal             | short-handed       | 2:21                  |
+|      2137 | goal             | regular            | 13:59                 |
+|      2134 | assist           | regular            | 13:59                 |
+|      2138 | assist           | regular            | 13:59                 |
+|      2139 | goal             | regular            | 13:26                 |
+|      2140 | assist           | regular            | 13:26                 |
+|      2141 | assist           | regular            | 13:26                 |
+|      3548 | goal             | regular            | 4:19                  |
+|      3549 | assist           | regular            | 4:19                  |
+|      3550 | assist           | regular            | 4:19                  |
+|      3551 | goal             | regular            | 1:51                  |
+|      3552 | assist           | regular            | 1:51                  |
+|      3553 | assist           | regular            | 1:51                  |
+|      3554 | goal             | regular            | 7:24                  |
+|      3555 | assist           | regular            | 7:24                  |
+|      3556 | assist           | regular            | 7:24                  |
+|      3746 | goal             | regular            | 18:37                 |
+|      3747 | assist           | regular            | 18:37                 |
+|      3748 | assist           | regular            | 18:37                 |
+|      3749 | goal             | power-play         | 16:39                 |
+|      3750 | assist           | power-play         | 16:39                 |
+|      3751 | assist           | power-play         | 16:39                 |
+|      3752 | goal             | regular            | 10:17                 |
+|      3753 | assist           | regular            | 10:17                 |
+|      3754 | assist           | regular            | 10:17                 |
+|      3755 | goal             | regular            | 1:39                  |
+|      3756 | assist           | regular            | 1:39                  |
+|      3757 | assist           | regular            | 1:39                  |
+|      3758 | goal             | regular            | 10:37                 |
+|      3759 | assist           | regular            | 10:37                 |
+|      3760 | goal             | regular            | 15:40                 |
+|      3761 | goal             | power-play         | 0:47                  |
+|      3776 | goal             | regular            | 15:47                 |
+|      3779 | assist           | regular            | 15:47                 |
+|      3780 | assist           | regular            | 15:47                 |
+|      3774 | goal             | short-handed       | 15:59                 |
+|      3781 | assist           | short-handed       | 15:59                 |
+|      3782 | assist           | short-handed       | 15:59                 |
+|      3925 | goal             | regular            | 7:31                  |
+|      3926 | assist           | regular            | 7:31                  |
+|      3927 | assist           | regular            | 7:31                  |
+|      3928 | goal             | regular            | 11:57                 |
+|      3929 | assist           | regular            | 11:57                 |
+|      3930 | assist           | regular            | 11:57                 |
+|      3937 | assist           | power-play         | 4:08                  |
+|      3936 | goal             | power-play         | 4:08                  |
+|      3933 | goal             | power-play         | 18:27                 |
+|      3934 | assist           | power-play         | 18:27                 |
+|      3935 | assist           | power-play         | 18:27                 |
++-----------+------------------+--------------------+-----------------------+
+138 rows in set (0.0009 sec)
+
+mysql>SELECT person_id, ice_hockey_offensive_stats.id, stat_repository_type, goals_game_winning FROM stats INNER JOIN ice_hockey_offensive_stats ON stat_repository_id = ice_hockey_offensive_stats.id INNER JOIN ice_hockey_action_participants ON person_id = stat_holder_id WHERE stat_repository_type = "ice_hockey_offensive_stats" AND stats.stat_holder_type = "persons";
++-----------+------+----------------------------+--------------------+
+| person_id | id   | stat_repository_type       | goals_game_winning |
++-----------+------+----------------------------+--------------------+
+|      1817 |    4 | ice_hockey_offensive_stats | 0                  |
+|      1818 |    7 | ice_hockey_offensive_stats | 0                  |
+|      1819 |    8 | ice_hockey_offensive_stats | 0                  |
+|      1821 |    3 | ice_hockey_offensive_stats | 0                  |
+|      1822 |    5 | ice_hockey_offensive_stats | 0                  |
+|      1823 |   28 | ice_hockey_offensive_stats | 0                  |
+|      1823 |   48 | ice_hockey_offensive_stats | 0                  |
+|      1824 |   25 | ice_hockey_offensive_stats | 0                  |
+|      1824 |   50 | ice_hockey_offensive_stats | 0                  |
+|      1825 |   22 | ice_hockey_offensive_stats | 1                  |
+|      1825 |   45 | ice_hockey_offensive_stats | 1                  |
+|      1826 |   24 | ice_hockey_offensive_stats | 0                  |
+|      1826 |   47 | ice_hockey_offensive_stats | 0                  |
+|      1827 |   26 | ice_hockey_offensive_stats | 0                  |
+|      1827 |   55 | ice_hockey_offensive_stats | 0                  |
+|      1829 |   27 | ice_hockey_offensive_stats | 0                  |
+|      1829 |   49 | ice_hockey_offensive_stats | 0                  |
+|      1830 |   23 | ice_hockey_offensive_stats | 0                  |
+|      1830 |   53 | ice_hockey_offensive_stats | 0                  |
+|      1863 |   70 | ice_hockey_offensive_stats | 0                  |
+|      1863 |  108 | ice_hockey_offensive_stats | 0                  |
+|      1864 |   72 | ice_hockey_offensive_stats | 0                  |
+|      1864 |  109 | ice_hockey_offensive_stats | 0                  |
+|      1865 |   69 | ice_hockey_offensive_stats | 0                  |
+|      1865 |  107 | ice_hockey_offensive_stats | 0                  |
+|      1868 |   73 | ice_hockey_offensive_stats | 1                  |
+|      1868 |  120 | ice_hockey_offensive_stats | 1                  |
+|      1871 |   89 | ice_hockey_offensive_stats | 0                  |
+|      1871 |  136 | ice_hockey_offensive_stats | 0                  |
+|      1872 |   88 | ice_hockey_offensive_stats | 0                  |
+|      1872 |  142 | ice_hockey_offensive_stats | 0                  |
+|      1873 |   90 | ice_hockey_offensive_stats | 0                  |
+|      1873 |  140 | ice_hockey_offensive_stats | 0                  |
+|      1879 |   91 | ice_hockey_offensive_stats | 0                  |
+|      1879 |  135 | ice_hockey_offensive_stats | 0                  |
+|      1975 |  313 | ice_hockey_offensive_stats | 0                  |
+|      1975 |  701 | ice_hockey_offensive_stats | 0                  |
+|      1976 |  314 | ice_hockey_offensive_stats | 0                  |
+|      1976 |  696 | ice_hockey_offensive_stats | 0                  |
+|      1977 |  312 | ice_hockey_offensive_stats | 0                  |
+|      1977 |  697 | ice_hockey_offensive_stats | 0                  |
+|      1978 |  316 | ice_hockey_offensive_stats | 0                  |
+|      1978 |  690 | ice_hockey_offensive_stats | 0                  |
+|      1979 |  315 | ice_hockey_offensive_stats | 0                  |
+|      1979 |  691 | ice_hockey_offensive_stats | 1                  |
+|      2137 |  530 | ice_hockey_offensive_stats | 0                  |
+|      2134 |  531 | ice_hockey_offensive_stats | 0                  |
+|      2138 |  529 | ice_hockey_offensive_stats | 0                  |
+|      2139 |  510 | ice_hockey_offensive_stats | 0                  |
+|      2140 |  512 | ice_hockey_offensive_stats | 0                  |
+|      2141 |  511 | ice_hockey_offensive_stats | 0                  |
+|      3548 |  823 | ice_hockey_offensive_stats | 1                  |
+|      3548 |  849 | ice_hockey_offensive_stats | 1                  |
+|      3549 |  824 | ice_hockey_offensive_stats | 0                  |
+|      3549 |  858 | ice_hockey_offensive_stats | 0                  |
+|      3550 |  829 | ice_hockey_offensive_stats | 0                  |
+|      3550 |  847 | ice_hockey_offensive_stats | 1                  |
+|      3551 |  828 | ice_hockey_offensive_stats | 0                  |
+|      3551 |  842 | ice_hockey_offensive_stats | 2                  |
+|      3552 |  826 | ice_hockey_offensive_stats | 0                  |
+|      3552 |  844 | ice_hockey_offensive_stats | 0                  |
+|      3554 |  827 | ice_hockey_offensive_stats | 0                  |
+|      3554 |  845 | ice_hockey_offensive_stats | 0                  |
+|      3556 |  825 | ice_hockey_offensive_stats | 0                  |
+|      3556 |  857 | ice_hockey_offensive_stats | 0                  |
+|      3746 |  895 | ice_hockey_offensive_stats | 0                  |
+|      3746 |  931 | ice_hockey_offensive_stats | 1                  |
+|      3747 |  893 | ice_hockey_offensive_stats | 0                  |
+|      3747 |  934 | ice_hockey_offensive_stats | 0                  |
+|      3748 |  896 | ice_hockey_offensive_stats | 0                  |
+|      3748 |  935 | ice_hockey_offensive_stats | 0                  |
+|      3750 |  900 | ice_hockey_offensive_stats | 0                  |
+|      3750 |  941 | ice_hockey_offensive_stats | 0                  |
+|      3751 |  899 | ice_hockey_offensive_stats | 0                  |
+|      3751 |  939 | ice_hockey_offensive_stats | 0                  |
+|      3755 |  894 | ice_hockey_offensive_stats | 1                  |
+|      3755 |  933 | ice_hockey_offensive_stats | 1                  |
+|      3756 |  897 | ice_hockey_offensive_stats | 0                  |
+|      3756 |  936 | ice_hockey_offensive_stats | 1                  |
+|      3757 |  892 | ice_hockey_offensive_stats | 0                  |
+|      3757 |  932 | ice_hockey_offensive_stats | 2                  |
+|      3760 |  898 | ice_hockey_offensive_stats | 0                  |
+|      3760 |  940 | ice_hockey_offensive_stats | 0                  |
+|      3776 | 1006 | ice_hockey_offensive_stats | 0                  |
+|      3776 | 1052 | ice_hockey_offensive_stats | 1                  |
+|      3780 | 1007 | ice_hockey_offensive_stats | 0                  |
+|      3780 | 1050 | ice_hockey_offensive_stats | 2                  |
+|      3774 |  987 | ice_hockey_offensive_stats | 0                  |
+|      3774 | 1029 | ice_hockey_offensive_stats | 1                  |
+|      3781 |  988 | ice_hockey_offensive_stats | 0                  |
+|      3781 | 1032 | ice_hockey_offensive_stats | 0                  |
+|      3782 |  989 | ice_hockey_offensive_stats | 0                  |
+|      3782 | 1038 | ice_hockey_offensive_stats | 0                  |
++-----------+------+----------------------------+--------------------+
+93 rows in set (0.0062 sec)
+

@@ -1,0 +1,17 @@
+ALTER TABLE `TEST2`.`ice_hockey_action_plays` DROP INDEX `id`, ADD INDEX `id` (`id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_action_participants` DROP INDEX `id`, ADD INDEX `id` (`id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_defensive_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_event_states` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_event_states` DROP INDEX `FK_ice_hoc_eve_sta_eve_id__eve_id`, ADD INDEX `FK_ice_hoc_eve_sta_eve_id__eve_id` (`event_id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_offensive_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+ALTER TABLE `TEST2`.`ice_hockey_player_stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP PRIMARY KEY, ADD PRIMARY KEY (`id`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_1`, ADD INDEX `IDX_stats_1` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_2`, ADD INDEX `IDX_stats_2` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_3`, ADD INDEX `IDX_stats_3` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_4`, ADD INDEX `IDX_stats_4` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_5`, ADD INDEX `IDX_stats_5` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_6`, ADD INDEX `IDX_stats_6` (`stat_repository_type`) USING HASH;
+ALTER TABLE `TEST2`.`stats` DROP INDEX `IDX_stats_7`, ADD INDEX `IDX_stats_7` (`stat_repository_type`) USING HASH;
+
+
